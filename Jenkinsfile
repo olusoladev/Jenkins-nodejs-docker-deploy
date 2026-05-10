@@ -19,12 +19,26 @@ pipeline {
     }
 
     stage('Install') {
+      agent {
+        docker {
+          image 'node:20-alpine'
+          reuseNode true
+        }
+      }
+
       steps {
         sh 'npm ci'
       }
     }
 
     stage('Test') {
+      agent {
+        docker {
+          image 'node:20-alpine'
+          reuseNode true
+        }
+      }
+
       steps {
         sh 'npm test'
       }

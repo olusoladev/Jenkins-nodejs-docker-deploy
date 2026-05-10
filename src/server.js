@@ -1,10 +1,10 @@
-const express = require('express');
+const http = require('http');
 
-const app = express();
 const port = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
-  res.type('text/plain').send('Hello World');
+const app = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Hello World');
 });
 
 if (require.main === module) {
