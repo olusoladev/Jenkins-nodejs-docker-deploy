@@ -22,6 +22,7 @@ COPY src ./src
 
 ENV NODE_ENV=production
 ENV PORT=3000
+ENV NAME=testingA123
 
 EXPOSE 3000
 
